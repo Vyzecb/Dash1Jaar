@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "titleTop": "Je bent uitgenodigd!",
+    "headline": "Dash 1 Jaar",
+    "subtitle": "Kom samen met ons vieren!"
+  },
+  "event": {
+    "dateLabel": "Datum",
+    "dateValue": "7 februari 2026",
+    "timeLabel": "Aanvang",
+    "timeValue": "13:00 uur",
+    "locationLabel": "Locatie",
+    "locationValue": "Jol 37-29, Lelystad"
+  },
+  "details": {
+    "note": "Geen dresscode • Geen jubileum-vermelding",
+    "ctaPrimary": "Zet in je agenda",
+    "ctaSecondary": "Route openen"
+  },
+  "theme": {
+    "style": "luxury-kids",
+    "accent": "gold",
+    "palette": "red-black-gold"
+  }
+}
