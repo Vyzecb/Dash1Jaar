@@ -8,30 +8,33 @@
 
   <style>
     :root{
-      --bg:#f7f4ef;
-      --paper:#ffffffcc;
-
-      --text:#1f1f24;
-      --muted:#55555f;
+      --bg:#f6f2ec;
+      --paper:#ffffff;
+      --ink:#1f1f24;
+      --muted:#5a5a66;
 
       --red1:#e01b2d;
       --red2:#a50f1c;
 
-      --gold1:#f7e29a;
+      --black1:#303039;
+      --black2:#0e0e12;
+
+      --gold1:#fbe9b1;
       --gold2:#d5b15a;
 
-      --shadow: 0 22px 60px rgba(0,0,0,.14);
-      --radius: 26px;
+      --shadow: 0 24px 70px rgba(0,0,0,.14);
+      --radius: 28px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
+      color:var(--ink);
       background:
-        radial-gradient(1200px 700px at 50% 0%, #ffffff, var(--bg) 65%),
+        radial-gradient(1000px 650px at 50% 0%, #ffffff, var(--bg) 70%),
         linear-gradient(180deg, #ffffff, var(--bg));
       overflow-x:hidden;
     }
@@ -44,29 +47,32 @@
       position:relative;
     }
 
-    /* gold confetti like the example */
+    /* Gold confetti + sparkle dots (more dense like the example, but still clean) */
     .confetti{
       position:absolute; inset:0;
       pointer-events:none;
       opacity:.95;
       background-image:
-        radial-gradient(circle at 10% 12%, rgba(213,177,90,.55) 0 2px, transparent 3px),
-        radial-gradient(circle at 18% 28%, rgba(247,226,154,.55) 0 1.5px, transparent 3px),
-        radial-gradient(circle at 28% 16%, rgba(213,177,90,.40) 0 1.2px, transparent 3px),
-        radial-gradient(circle at 36% 40%, rgba(247,226,154,.35) 0 1.2px, transparent 3px),
-        radial-gradient(circle at 46% 22%, rgba(213,177,90,.45) 0 1.7px, transparent 3px),
-        radial-gradient(circle at 58% 30%, rgba(247,226,154,.40) 0 1.3px, transparent 3px),
-        radial-gradient(circle at 70% 18%, rgba(213,177,90,.45) 0 1.8px, transparent 3px),
-        radial-gradient(circle at 82% 30%, rgba(247,226,154,.45) 0 1.4px, transparent 3px),
-        radial-gradient(circle at 90% 14%, rgba(213,177,90,.50) 0 2px, transparent 3px),
+        radial-gradient(circle at 12% 14%, rgba(213,177,90,.60) 0 2px, transparent 3px),
+        radial-gradient(circle at 22% 22%, rgba(251,233,177,.55) 0 1.6px, transparent 3px),
+        radial-gradient(circle at 34% 14%, rgba(213,177,90,.42) 0 1.2px, transparent 3px),
+        radial-gradient(circle at 46% 24%, rgba(251,233,177,.42) 0 1.3px, transparent 3px),
+        radial-gradient(circle at 58% 16%, rgba(213,177,90,.55) 0 1.7px, transparent 3px),
+        radial-gradient(circle at 70% 22%, rgba(251,233,177,.45) 0 1.4px, transparent 3px),
+        radial-gradient(circle at 86% 14%, rgba(213,177,90,.55) 0 2px, transparent 3px),
 
-        radial-gradient(circle at 12% 70%, rgba(247,226,154,.50) 0 1.6px, transparent 3px),
-        radial-gradient(circle at 24% 86%, rgba(213,177,90,.42) 0 1.4px, transparent 3px),
-        radial-gradient(circle at 40% 78%, rgba(247,226,154,.40) 0 1.2px, transparent 3px),
-        radial-gradient(circle at 58% 86%, rgba(213,177,90,.40) 0 1.5px, transparent 3px),
-        radial-gradient(circle at 76% 76%, rgba(247,226,154,.42) 0 1.3px, transparent 3px),
-        radial-gradient(circle at 90% 86%, rgba(213,177,90,.44) 0 1.6px, transparent 3px);
-      filter: blur(.15px);
+        radial-gradient(circle at 14% 64%, rgba(251,233,177,.55) 0 1.6px, transparent 3px),
+        radial-gradient(circle at 26% 82%, rgba(213,177,90,.42) 0 1.4px, transparent 3px),
+        radial-gradient(circle at 40% 72%, rgba(251,233,177,.42) 0 1.2px, transparent 3px),
+        radial-gradient(circle at 56% 86%, rgba(213,177,90,.42) 0 1.5px, transparent 3px),
+        radial-gradient(circle at 72% 76%, rgba(251,233,177,.42) 0 1.3px, transparent 3px),
+        radial-gradient(circle at 88% 86%, rgba(213,177,90,.45) 0 1.6px, transparent 3px),
+
+        /* tiny white sparkles */
+        radial-gradient(circle at 18% 44%, rgba(255,255,255,.55) 0 1px, transparent 2.8px),
+        radial-gradient(circle at 62% 40%, rgba(255,255,255,.45) 0 1px, transparent 2.8px),
+        radial-gradient(circle at 84% 52%, rgba(255,255,255,.40) 0 1px, transparent 2.8px);
+      filter: blur(.12px);
       animation: drift 9s ease-in-out infinite;
     }
     @keyframes drift{
@@ -75,23 +81,36 @@
     }
 
     .card{
-      width:min(920px, 100%);
+      width:min(960px, 100%);
       border-radius: var(--radius);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.92);
       box-shadow: var(--shadow);
       border: 1px solid rgba(0,0,0,.06);
       position:relative;
       overflow:hidden;
     }
 
-    /* subtle paper inner */
+    /* paper texture + subtle vignette */
+    .card::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(800px 520px at 50% 25%, rgba(255,255,255,.90), rgba(255,255,255,.0) 70%),
+        radial-gradient(900px 700px at 50% 50%, rgba(0,0,0,.04), rgba(0,0,0,0) 60%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 1px, transparent 1px 3px);
+      mix-blend-mode: multiply;
+      opacity:.35;
+      pointer-events:none;
+      z-index:0;
+    }
+
     .inner{
       padding: 28px;
       position:relative;
       z-index:2;
     }
 
-    /* balloon columns like the reference */
+    /* balloon columns */
     .balloons{
       position:absolute; inset:0;
       pointer-events:none;
@@ -100,20 +119,22 @@
     }
     .balloon{
       position:absolute;
-      width: 110px; height: 135px;
+      width: 112px; height: 138px;
       border-radius: 50% 50% 48% 48%;
       filter: drop-shadow(0 18px 22px rgba(0,0,0,.18));
       border: 1px solid rgba(255,255,255,.25);
     }
     .balloon.red{
       background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.55), rgba(255,255,255,0) 38%),
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.58), rgba(255,255,255,0) 38%),
+        radial-gradient(circle at 60% 70%, rgba(0,0,0,.16), rgba(0,0,0,0) 58%),
         linear-gradient(180deg, var(--red1), var(--red2));
     }
     .balloon.black{
       background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.30), rgba(255,255,255,0) 40%),
-        linear-gradient(180deg, #2a2a31, #0e0e12);
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.34), rgba(255,255,255,0) 40%),
+        radial-gradient(circle at 60% 70%, rgba(255,255,255,.08), rgba(255,255,255,0) 58%),
+        linear-gradient(180deg, var(--black1), var(--black2));
     }
     .balloon::after{
       content:"";
@@ -123,7 +144,7 @@
       transform: translateX(-50%) rotate(45deg);
       border-radius: 2px;
       background: inherit;
-      filter: brightness(.88);
+      filter: brightness(.90);
     }
     .string{
       position:absolute;
@@ -135,43 +156,42 @@
       opacity:.55;
     }
 
-    /* left side cluster */
-    .l1{left:-40px; top:30px}
-    .l2{left:-25px; top:170px; transform: scale(.92) rotate(-6deg)}
-    .l3{left:-45px; top:320px; transform: scale(.98) rotate(6deg)}
-    .l4{left:-30px; top:470px; transform: scale(.88) rotate(-4deg)}
-    /* right side cluster */
-    .r1{right:-40px; top:40px}
-    .r2{right:-25px; top:190px; transform: scale(.92) rotate(7deg)}
-    .r3{right:-45px; top:340px; transform: scale(.98) rotate(-6deg)}
-    .r4{right:-30px; top:490px; transform: scale(.88) rotate(4deg)}
+    .l1{left:-46px; top:20px}
+    .l2{left:-26px; top:170px; transform: scale(.92) rotate(-6deg)}
+    .l3{left:-48px; top:330px; transform: scale(.98) rotate(6deg)}
+    .l4{left:-26px; top:500px; transform: scale(.88) rotate(-4deg)}
 
-    /* top script title like “Je bent uitgenodigd!” */
+    .r1{right:-46px; top:30px}
+    .r2{right:-26px; top:190px; transform: scale(.92) rotate(7deg)}
+    .r3{right:-48px; top:350px; transform: scale(.98) rotate(-6deg)}
+    .r4{right:-26px; top:520px; transform: scale(.88) rotate(4deg)}
+
+    /* script title */
     .script{
       text-align:center;
       font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
       font-style: italic;
-      font-size: clamp(26px, 4vw, 40px);
-      margin: 10px 0 12px;
+      font-size: clamp(26px, 4vw, 44px);
+      margin: 10px 0 10px;
       letter-spacing: .2px;
       color:#2a2a30;
     }
     .script .accent{
       color: var(--red1);
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    /* center “ears” icon */
+    /* ears */
     .ears{
-      width: 140px;
-      height: 95px;
-      margin: 8px auto 6px;
+      width: 150px;
+      height: 100px;
+      margin: 6px auto 0;
       position:relative;
-      filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.14));
     }
     .ears .ear{
       position:absolute;
-      width: 58px; height: 58px;
+      width: 62px; height: 62px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.10), rgba(0,0,0,.92));
       top:0;
@@ -180,59 +200,56 @@
     .ears .ear.right{right:0}
     .ears .head{
       position:absolute;
-      width: 84px; height: 84px;
+      width: 92px; height: 92px;
       border-radius: 50%;
-      left:50%; top:36px;
+      left:50%; top:38px;
       transform: translateX(-50%);
       background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.12), rgba(0,0,0,.92));
     }
 
-    /* Dash + 1 Jaar like the card */
+    /* headline */
     .name{
       text-align:center;
-      margin: 0;
-      font-weight: 900;
-      font-size: clamp(54px, 7vw, 90px);
-      letter-spacing: -.5px;
+      margin: 2px 0 0;
+      font-weight: 950;
+      font-size: clamp(56px, 7vw, 96px);
+      letter-spacing: -.6px;
       color: var(--red1);
-      text-shadow: 0 14px 40px rgba(224,27,45,.18);
+      text-shadow: 0 16px 46px rgba(224,27,45,.18);
     }
     .age{
       text-align:center;
-      margin: 4px 0 18px;
-      font-weight: 900;
-      font-size: clamp(40px, 6vw, 72px);
+      margin: 6px 0 16px;
+      font-weight: 950;
+      font-size: clamp(42px, 6vw, 76px);
       color: var(--gold2);
-      text-shadow: 0 14px 40px rgba(213,177,90,.20);
+      text-shadow: 0 16px 46px rgba(213,177,90,.18);
     }
 
-    .details{
-      max-width: 560px;
+    .panel{
+      max-width: 620px;
       margin: 0 auto;
-      padding: 16px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.70);
+      padding: 18px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.72);
       border: 1px solid rgba(0,0,0,.07);
-      box-shadow: 0 14px 40px rgba(0,0,0,.08);
+      box-shadow: 0 14px 44px rgba(0,0,0,.08);
       text-align:center;
     }
 
     .row{
       font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
       font-size: 22px;
-      line-height: 1.65;
+      line-height: 1.7;
       color:#2a2a30;
     }
-    .row strong{
-      font-weight: 800;
-      color:#1f1f24;
-    }
+    .row strong{font-weight: 900; color:#1f1f24}
 
     .divider{
       height:1px;
-      width:min(560px, 90%);
-      margin: 18px auto;
-      background: linear-gradient(90deg, transparent, rgba(0,0,0,.18), transparent);
+      width:min(620px, 92%);
+      margin: 18px auto 14px;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,.20), transparent);
     }
 
     .actions{
@@ -242,14 +259,15 @@
       flex-wrap:wrap;
       margin-top: 14px;
     }
+
     .btn{
       appearance:none;
       border: 1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.92);
       color:#1f1f24;
       padding: 12px 14px;
       border-radius: 14px;
-      font-weight: 800;
+      font-weight: 900;
       cursor:pointer;
       text-decoration:none;
       display:inline-flex;
@@ -258,30 +276,46 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.10);
       transition: transform .12s ease, box-shadow .12s ease;
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 16px 40px rgba(0,0,0,.12)}
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 16px 42px rgba(0,0,0,.12)}
+
     .btn.gold{
-      border: none;
+      border:none;
       background: linear-gradient(180deg, var(--gold1), var(--gold2));
-      color: #1b1b1f;
+      color:#1b1b1f;
     }
     .btn.whatsapp{
-      border: none;
-      background: linear-gradient(180deg, #25D366, #18a84f);
-      color: #0b130f;
+      border:none;
+      background: linear-gradient(180deg, #25D366, #17a34a);
+      color:#08130b;
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.86);
+    }
+
+    .rsvp{
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(0,0,0,.14);
+      background: rgba(255,255,255,.62);
+      color: rgba(31,31,36,.72);
+      font-size: 13px;
+      line-height: 1.6;
     }
 
     .fine{
       text-align:center;
-      margin: 12px 0 6px;
+      margin: 10px 0 4px;
       color: rgba(31,31,36,.68);
       font-size: 13px;
     }
 
-    @media (max-width: 520px){
-      .inner{padding: 20px}
+    @media (max-width: 560px){
+      .inner{padding: 18px}
       .balloon{width: 92px; height: 115px}
-      .details{padding: 14px}
+      .panel{padding: 16px}
       .row{font-size: 20px}
+      .rsvp{font-size: 12.5px}
     }
   </style>
 </head>
@@ -315,10 +349,10 @@
           <div class="head"></div>
         </div>
 
-        <h1 class="name" id="headline">Dash</h1>
+        <h1 class="name" id="nameText">Dash</h1>
         <div class="age" id="ageText">1 Jaar</div>
 
-        <div class="details" aria-label="Feestdetails">
+        <div class="panel" aria-label="Feestdetails">
           <div class="row"><strong>Datum:</strong> <span id="dateValue">7 februari 2026</span></div>
           <div class="row"><strong>Aanvang:</strong> <span id="timeValue">13:00 uur</span></div>
           <div class="row"><strong>Locatie:</strong> <span id="locationValue">Jol 37-29, Lelystad</span></div>
@@ -327,15 +361,19 @@
 
           <div class="actions">
             <button class="btn gold" id="btnCalendar" type="button">📅 Zet in agenda</button>
-            <a class="btn" id="btnMaps" href="#" target="_blank" rel="noreferrer">📍 Route</a>
+            <a class="btn ghost" id="btnMaps" href="#" target="_blank" rel="noreferrer">📍 Route</a>
           </div>
 
           <div class="actions">
             <a class="btn whatsapp" id="btnYes" href="#" target="_blank" rel="noreferrer">💬 Ik kom</a>
-            <a class="btn" id="btnNo" href="#" target="_blank" rel="noreferrer">💬 Ik kom niet</a>
+            <a class="btn ghost" id="btnNo" href="#" target="_blank" rel="noreferrer">💬 Ik kom niet</a>
           </div>
 
-          <div class="fine" id="fineText">Laat je even weten of je erbij bent via WhatsApp?</div>
+          <div class="rsvp" id="rsvpText">
+            RSVP via WhatsApp is genoeg. Reageer met “Ik kom” of “Ik kom niet”.
+          </div>
+
+          <div class="fine" id="fineText">Tot dan! ✨</div>
         </div>
       </div>
     </main>
@@ -350,11 +388,11 @@
       timeValue: "13:00 uur",
       locationValue: "Jol 37-29, Lelystad",
       whatsappPhone: "+31648608336",
-      fine: "Laat je even weten of je erbij bent via WhatsApp?"
+      fine: "Tot dan! ✨"
     };
 
     // Render
-    document.getElementById("headline").textContent = INVITE.name;
+    document.getElementById("nameText").textContent = INVITE.name;
     document.getElementById("ageText").textContent = INVITE.age;
     document.getElementById("dateValue").textContent = INVITE.dateValue;
     document.getElementById("timeValue").textContent = INVITE.timeValue;
