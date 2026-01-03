@@ -4,23 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Uitnodiging • Dash 1 Jaar</title>
-  <meta name="description" content="Luxe verjaardagsuitnodiging • Dash 1 Jaar • 7 februari 2026 • 13:00 • Jol 37-29, Lelystad" />
+  <meta name="description" content="Verjaardagsuitnodiging • Dash 1 Jaar • 7 februari 2026 • 13:00 • Jol 37-29, Lelystad" />
 
   <style>
     :root{
-      --bg0:#07070b;
-      --bg1:#0b0b12;
+      --bg:#f7f4ef;
+      --paper:#ffffffcc;
 
-      --text:#f6f2ea;
-      --muted: rgba(246,242,234,.74);
+      --text:#1f1f24;
+      --muted:#55555f;
 
-      --gold1:#fff1b8;
-      --gold2:#d6b25f;
+      --red1:#e01b2d;
+      --red2:#a50f1c;
 
-      --red:#b7121b;
-      --black:#0b0b0f;
+      --gold1:#f7e29a;
+      --gold2:#d5b15a;
 
-      --shadow: 0 28px 80px rgba(0,0,0,.55);
+      --shadow: 0 22px 60px rgba(0,0,0,.14);
       --radius: 26px;
     }
 
@@ -31,338 +31,258 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(183,18,27,.20), transparent 55%),
-        radial-gradient(900px 520px at 85% 20%, rgba(214,178,95,.16), transparent 55%),
-        radial-gradient(900px 520px at 45% 85%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        radial-gradient(1200px 700px at 50% 0%, #ffffff, var(--bg) 65%),
+        linear-gradient(180deg, #ffffff, var(--bg));
       overflow-x:hidden;
     }
 
     .wrap{
       min-height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:34px 18px;
+      display:grid;
+      place-items:center;
+      padding:24px 14px;
       position:relative;
     }
 
-    /* Subtle “gold confetti” */
+    /* gold confetti like the example */
     .confetti{
       position:absolute; inset:0;
       pointer-events:none;
-      opacity:.42;
+      opacity:.95;
       background-image:
-        radial-gradient(circle at 12% 18%, rgba(247,231,162,.85) 0 2px, transparent 3px),
-        radial-gradient(circle at 22% 68%, rgba(214,178,95,.75) 0 1.6px, transparent 3px),
-        radial-gradient(circle at 78% 22%, rgba(247,231,162,.75) 0 1.8px, transparent 3px),
-        radial-gradient(circle at 86% 62%, rgba(214,178,95,.8) 0 2.2px, transparent 3px),
-        radial-gradient(circle at 55% 40%, rgba(247,231,162,.55) 0 1.4px, transparent 3px),
-        radial-gradient(circle at 35% 30%, rgba(214,178,95,.55) 0 1.2px, transparent 3px);
-      filter: blur(.2px);
-      animation: float 9s ease-in-out infinite;
+        radial-gradient(circle at 10% 12%, rgba(213,177,90,.55) 0 2px, transparent 3px),
+        radial-gradient(circle at 18% 28%, rgba(247,226,154,.55) 0 1.5px, transparent 3px),
+        radial-gradient(circle at 28% 16%, rgba(213,177,90,.40) 0 1.2px, transparent 3px),
+        radial-gradient(circle at 36% 40%, rgba(247,226,154,.35) 0 1.2px, transparent 3px),
+        radial-gradient(circle at 46% 22%, rgba(213,177,90,.45) 0 1.7px, transparent 3px),
+        radial-gradient(circle at 58% 30%, rgba(247,226,154,.40) 0 1.3px, transparent 3px),
+        radial-gradient(circle at 70% 18%, rgba(213,177,90,.45) 0 1.8px, transparent 3px),
+        radial-gradient(circle at 82% 30%, rgba(247,226,154,.45) 0 1.4px, transparent 3px),
+        radial-gradient(circle at 90% 14%, rgba(213,177,90,.50) 0 2px, transparent 3px),
+
+        radial-gradient(circle at 12% 70%, rgba(247,226,154,.50) 0 1.6px, transparent 3px),
+        radial-gradient(circle at 24% 86%, rgba(213,177,90,.42) 0 1.4px, transparent 3px),
+        radial-gradient(circle at 40% 78%, rgba(247,226,154,.40) 0 1.2px, transparent 3px),
+        radial-gradient(circle at 58% 86%, rgba(213,177,90,.40) 0 1.5px, transparent 3px),
+        radial-gradient(circle at 76% 76%, rgba(247,226,154,.42) 0 1.3px, transparent 3px),
+        radial-gradient(circle at 90% 86%, rgba(213,177,90,.44) 0 1.6px, transparent 3px);
+      filter: blur(.15px);
+      animation: drift 9s ease-in-out infinite;
     }
-    @keyframes float{
-      0%,100%{transform: translateY(0px)}
-      50%{transform: translateY(-12px)}
+    @keyframes drift{
+      0%,100%{transform: translateY(0)}
+      50%{transform: translateY(-10px)}
     }
 
     .card{
       width:min(920px, 100%);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      background: rgba(255,255,255,.86);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.10);
+      border: 1px solid rgba(0,0,0,.06);
       position:relative;
       overflow:hidden;
     }
 
-    /* Gold rim */
-    .card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: conic-gradient(from 210deg,
-        rgba(255,241,184,.22),
-        rgba(214,178,95,.82),
-        rgba(255,241,184,.18),
-        rgba(214,178,95,.60),
-        rgba(255,241,184,.22)
-      );
-      filter: blur(10px);
-      opacity:.30;
-      z-index:0;
-    }
-
-    /* Luxury inner panel */
+    /* subtle paper inner */
     .inner{
+      padding: 28px;
       position:relative;
-      z-index:1;
-      padding: 38px;
+      z-index:2;
     }
 
-    .top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-      margin-bottom: 8px;
-    }
-
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.34);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 35px rgba(0,0,0,.35);
-    }
-
-    .tag .dot{
-      width:10px;height:10px;border-radius:50%;
-      background: linear-gradient(180deg, var(--gold1), var(--gold2));
-      box-shadow: 0 0 0 4px rgba(214,178,95,.18);
-    }
-
-    .script{
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      letter-spacing:.2px;
-      font-size: 18px;
-      color: var(--gold1);
-      text-shadow: 0 10px 35px rgba(214,178,95,.20);
-    }
-
-    .hero{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 26px;
-      align-items:center;
-    }
-    @media (max-width: 860px){
-      .hero{grid-template-columns: 1fr}
-      .inner{padding: 28px}
-    }
-
-    .headline{
-      margin:0;
-      font-size: clamp(40px, 5vw, 68px);
-      line-height: 1.02;
-      letter-spacing: -1.2px;
-    }
-
-    .sub{
-      margin:12px 0 0;
-      color:var(--muted);
-      font-size: 16px;
-      line-height: 1.65;
-      max-width: 62ch;
-    }
-
-    /* Elegant “ears” emblem (generic) */
-    .emblem{
-      aspect-ratio: 1 / 1;
-      border-radius: 24px;
-      background:
-        radial-gradient(120px 120px at 30% 30%, rgba(183,18,27,.42), transparent 60%),
-        radial-gradient(140px 140px at 75% 20%, rgba(214,178,95,.28), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.25));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 26px 75px rgba(0,0,0,.58);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .ears{
-      position:absolute; inset:0;
-      display:grid;
-      place-items:center;
-      transform: translateY(-6px);
-    }
-    .ear-wrap{
-      width: 64%;
-      height: 64%;
-      position:relative;
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,.58));
-    }
-    .ear{
-      position:absolute;
-      width: 42%;
-      height: 42%;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.10), rgba(0,0,0,.88));
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .ear.left{left:0; top:0}
-    .ear.right{right:0; top:0}
-    .head{
-      position:absolute;
-      left:50%; top:54%;
-      transform: translate(-50%,-50%);
-      width: 60%;
-      height: 60%;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.12), rgba(0,0,0,.90));
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .gold-stamp{
-      position:absolute;
-      left:50%; bottom:18px;
-      transform: translateX(-50%);
-      padding:10px 14px;
-      border-radius: 999px;
-      font-weight: 800;
-      letter-spacing:.14em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: rgba(10,10,14,.95);
-      background: linear-gradient(180deg, var(--gold1), var(--gold2));
-      box-shadow: 0 18px 55px rgba(214,178,95,.22);
-    }
-
-    /* Satin balloons (CSS) */
+    /* balloon columns like the reference */
     .balloons{
-      position:absolute;
-      right:-40px; top:-30px;
-      width: 340px;
-      height: 270px;
+      position:absolute; inset:0;
       pointer-events:none;
-      opacity:.95;
-      filter: drop-shadow(0 22px 55px rgba(0,0,0,.55));
+      z-index:1;
+      opacity: 1;
     }
     .balloon{
       position:absolute;
-      width: 98px; height: 118px;
+      width: 110px; height: 135px;
       border-radius: 50% 50% 48% 48%;
-      border:1px solid rgba(255,255,255,.12);
-      transform: rotate(-6deg);
+      filter: drop-shadow(0 18px 22px rgba(0,0,0,.18));
+      border: 1px solid rgba(255,255,255,.25);
     }
     .balloon.red{
       background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.38), rgba(255,255,255,0) 38%),
-        radial-gradient(circle at 65% 70%, rgba(0,0,0,.18), rgba(0,0,0,0) 58%),
-        linear-gradient(180deg, rgba(183,18,27,.98), rgba(120,8,12,.98));
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.55), rgba(255,255,255,0) 38%),
+        linear-gradient(180deg, var(--red1), var(--red2));
     }
     .balloon.black{
       background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.24), rgba(255,255,255,0) 38%),
-        radial-gradient(circle at 60% 65%, rgba(255,255,255,.08), rgba(255,255,255,0) 55%),
-        linear-gradient(180deg, rgba(22,22,30,.98), rgba(6,6,10,.98));
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.30), rgba(255,255,255,0) 40%),
+        linear-gradient(180deg, #2a2a31, #0e0e12);
     }
-    .balloon:nth-child(1){right:130px; top:60px; transform: rotate(10deg) scale(1.0)}
-    .balloon:nth-child(2){right:55px; top:20px; transform: rotate(-6deg) scale(1.08)}
-    .balloon:nth-child(3){right:10px; top:100px; transform: rotate(8deg) scale(.96)}
     .balloon::after{
       content:"";
       position:absolute;
       left:50%; bottom:-10px;
-      width: 14px; height: 14px;
+      width: 16px; height: 16px;
       transform: translateX(-50%) rotate(45deg);
       border-radius: 2px;
       background: inherit;
-      filter: brightness(.86);
+      filter: brightness(.88);
     }
     .string{
       position:absolute;
       left:50%; bottom:-120px;
       width:2px; height:120px;
-      background: linear-gradient(180deg, rgba(214,178,95,.0), rgba(214,178,95,.55));
       transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.18));
       border-radius:999px;
-      opacity:.9;
+      opacity:.55;
     }
 
-    .info{
-      margin-top: 22px;
-      padding: 18px 18px;
-      background: rgba(0,0,0,.26);
-      border: 1px solid rgba(255,255,255,.10);
+    /* left side cluster */
+    .l1{left:-40px; top:30px}
+    .l2{left:-25px; top:170px; transform: scale(.92) rotate(-6deg)}
+    .l3{left:-45px; top:320px; transform: scale(.98) rotate(6deg)}
+    .l4{left:-30px; top:470px; transform: scale(.88) rotate(-4deg)}
+    /* right side cluster */
+    .r1{right:-40px; top:40px}
+    .r2{right:-25px; top:190px; transform: scale(.92) rotate(7deg)}
+    .r3{right:-45px; top:340px; transform: scale(.98) rotate(-6deg)}
+    .r4{right:-30px; top:490px; transform: scale(.88) rotate(4deg)}
+
+    /* top script title like “Je bent uitgenodigd!” */
+    .script{
+      text-align:center;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-style: italic;
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 10px 0 12px;
+      letter-spacing: .2px;
+      color:#2a2a30;
+    }
+    .script .accent{
+      color: var(--red1);
+      font-weight: 700;
+    }
+
+    /* center “ears” icon */
+    .ears{
+      width: 140px;
+      height: 95px;
+      margin: 8px auto 6px;
+      position:relative;
+      filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
+    }
+    .ears .ear{
+      position:absolute;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.10), rgba(0,0,0,.92));
+      top:0;
+    }
+    .ears .ear.left{left:0}
+    .ears .ear.right{right:0}
+    .ears .head{
+      position:absolute;
+      width: 84px; height: 84px;
+      border-radius: 50%;
+      left:50%; top:36px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.12), rgba(0,0,0,.92));
+    }
+
+    /* Dash + 1 Jaar like the card */
+    .name{
+      text-align:center;
+      margin: 0;
+      font-weight: 900;
+      font-size: clamp(54px, 7vw, 90px);
+      letter-spacing: -.5px;
+      color: var(--red1);
+      text-shadow: 0 14px 40px rgba(224,27,45,.18);
+    }
+    .age{
+      text-align:center;
+      margin: 4px 0 18px;
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 72px);
+      color: var(--gold2);
+      text-shadow: 0 14px 40px rgba(213,177,90,.20);
+    }
+
+    .details{
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 16px 16px;
       border-radius: 18px;
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(0,0,0,.07);
+      box-shadow: 0 14px 40px rgba(0,0,0,.08);
+      text-align:center;
+    }
+
+    .row{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 22px;
+      line-height: 1.65;
+      color:#2a2a30;
+    }
+    .row strong{
+      font-weight: 800;
+      color:#1f1f24;
     }
 
     .divider{
       height:1px;
-      margin: 14px 0 16px;
-      background: linear-gradient(90deg, rgba(214,178,95,.0), rgba(214,178,95,.74), rgba(214,178,95,.0));
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    @media (max-width: 700px){
-      .grid{grid-template-columns: 1fr}
-    }
-
-    .item{
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .label{
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(255,241,184,.86);
-      margin:0 0 6px;
-    }
-    .value{
-      margin:0;
-      font-size: 16px;
-      color: var(--text);
-      font-weight: 700;
+      width:min(560px, 90%);
+      margin: 18px auto;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,.18), transparent);
     }
 
     .actions{
       display:flex;
+      justify-content:center;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: 16px;
+      margin-top: 14px;
     }
     .btn{
       appearance:none;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
+      border: 1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.85);
+      color:#1f1f24;
       padding: 12px 14px;
       border-radius: 14px;
-      font-weight: 750;
+      font-weight: 800;
       cursor:pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
       text-decoration:none;
       display:inline-flex;
       align-items:center;
       gap:10px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.10);
+      transition: transform .12s ease, box-shadow .12s ease;
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.24)}
-    .btn.primary{
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 16px 40px rgba(0,0,0,.12)}
+    .btn.gold{
       border: none;
-      color: rgba(10,10,14,.95);
       background: linear-gradient(180deg, var(--gold1), var(--gold2));
-      box-shadow: 0 18px 55px rgba(214,178,95,.22);
+      color: #1b1b1f;
     }
-    .btn.primary:hover{background: linear-gradient(180deg, #fff6cd, #cda64d)}
-
     .btn.whatsapp{
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.07);
+      border: none;
+      background: linear-gradient(180deg, #25D366, #18a84f);
+      color: #0b130f;
     }
 
     .fine{
-      margin-top: 14px;
-      color: rgba(246,242,234,.62);
+      text-align:center;
+      margin: 12px 0 6px;
+      color: rgba(31,31,36,.68);
       font-size: 13px;
-      line-height: 1.55;
     }
 
-    .sr{position:absolute; left:-9999px}
+    @media (max-width: 520px){
+      .inner{padding: 20px}
+      .balloon{width: 92px; height: 115px}
+      .details{padding: 14px}
+      .row{font-size: 20px}
+    }
   </style>
 </head>
 
@@ -372,140 +292,92 @@
 
     <main class="card" role="main" aria-label="Verjaardagsuitnodiging">
       <div class="balloons" aria-hidden="true">
-        <div class="balloon red"><div class="string"></div></div>
-        <div class="balloon black"><div class="string"></div></div>
-        <div class="balloon red"><div class="string"></div></div>
+        <!-- left -->
+        <div class="balloon red l1"><div class="string"></div></div>
+        <div class="balloon black l2"><div class="string"></div></div>
+        <div class="balloon red l3"><div class="string"></div></div>
+        <div class="balloon black l4"><div class="string"></div></div>
+        <!-- right -->
+        <div class="balloon red r1"><div class="string"></div></div>
+        <div class="balloon black r2"><div class="string"></div></div>
+        <div class="balloon red r3"><div class="string"></div></div>
+        <div class="balloon black r4"><div class="string"></div></div>
       </div>
 
       <div class="inner">
-        <div class="top">
-          <div class="tag">
-            <div class="dot"></div>
-            <div class="script" id="titleTop">Je bent uitgenodigd!</div>
-          </div>
+        <div class="script" id="titleTop">
+          Je bent <span class="accent">uitgenodigd!</span>
         </div>
 
-        <section class="hero">
-          <div>
-            <h1 class="headline" id="headline">Dash 1 Jaar</h1>
-            <p class="sub" id="subtitle">Zaterdag vieren we een bijzonder moment. We hopen je te zien!</p>
+        <div class="ears" aria-hidden="true">
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="head"></div>
+        </div>
 
-            <div class="info" aria-label="Feestdetails">
-              <div class="divider" aria-hidden="true"></div>
+        <h1 class="name" id="headline">Dash</h1>
+        <div class="age" id="ageText">1 Jaar</div>
 
-              <div class="grid">
-                <div class="item">
-                  <p class="label" id="dateLabel">Datum</p>
-                  <p class="value" id="dateValue">7 februari 2026</p>
-                </div>
-                <div class="item">
-                  <p class="label" id="timeLabel">Aanvang</p>
-                  <p class="value" id="timeValue">13:00 uur</p>
-                </div>
-                <div class="item">
-                  <p class="label" id="locationLabel">Locatie</p>
-                  <p class="value" id="locationValue">Jol 37-29, Lelystad</p>
-                </div>
-              </div>
+        <div class="details" aria-label="Feestdetails">
+          <div class="row"><strong>Datum:</strong> <span id="dateValue">7 februari 2026</span></div>
+          <div class="row"><strong>Aanvang:</strong> <span id="timeValue">13:00 uur</span></div>
+          <div class="row"><strong>Locatie:</strong> <span id="locationValue">Jol 37-29, Lelystad</span></div>
 
-              <div class="actions">
-                <button class="btn primary" id="btnCalendar" type="button">📅 Zet in je agenda</button>
-                <a class="btn" id="btnMaps" href="#" target="_blank" rel="noreferrer">📍 Route</a>
-              </div>
+          <div class="divider" aria-hidden="true"></div>
 
-              <div class="actions">
-                <a class="btn whatsapp" id="btnYes" href="#" target="_blank" rel="noreferrer">💬 Ik kom</a>
-                <a class="btn whatsapp" id="btnNo" href="#" target="_blank" rel="noreferrer">💬 Ik kom niet</a>
-              </div>
-
-              <p class="fine" id="fineText">
-                Graag even laten weten of je erbij bent via WhatsApp. Dankjewel!
-              </p>
-            </div>
+          <div class="actions">
+            <button class="btn gold" id="btnCalendar" type="button">📅 Zet in agenda</button>
+            <a class="btn" id="btnMaps" href="#" target="_blank" rel="noreferrer">📍 Route</a>
           </div>
 
-          <aside class="emblem" aria-label="Thema embleem">
-            <div class="ears">
-              <div class="ear-wrap">
-                <div class="ear left"></div>
-                <div class="ear right"></div>
-                <div class="head"></div>
-              </div>
-            </div>
-            <div class="gold-stamp">UITNODIGING</div>
-          </aside>
-        </section>
+          <div class="actions">
+            <a class="btn whatsapp" id="btnYes" href="#" target="_blank" rel="noreferrer">💬 Ik kom</a>
+            <a class="btn" id="btnNo" href="#" target="_blank" rel="noreferrer">💬 Ik kom niet</a>
+          </div>
+
+          <div class="fine" id="fineText">Laat je even weten of je erbij bent via WhatsApp?</div>
+        </div>
       </div>
     </main>
   </div>
 
   <script>
-    // ====== Edit this JSON to change the website content ======
     const INVITE = {
-      brand: {
-        titleTop: "Je bent uitgenodigd!",
-        headline: "Dash 1 Jaar",
-        subtitle: "Zaterdag vieren we een bijzonder moment. We hopen je te zien!"
-      },
-      event: {
-        dateLabel: "Datum",
-        dateValue: "7 februari 2026",
-        timeLabel: "Aanvang",
-        timeValue: "13:00 uur",
-        locationLabel: "Locatie",
-        locationValue: "Jol 37-29, Lelystad"
-      },
-      whatsapp: {
-        phoneE164: "+31648608336",
-        yesText: "Ik kom",
-        noText: "Ik kom niet"
-      },
-      buttons: {
-        calendar: "Zet in je agenda",
-        maps: "Route"
-      }
+      titleTop: "Je bent uitgenodigd!",
+      name: "Dash",
+      age: "1 Jaar",
+      dateValue: "7 februari 2026",
+      timeValue: "13:00 uur",
+      locationValue: "Jol 37-29, Lelystad",
+      whatsappPhone: "+31648608336",
+      fine: "Laat je even weten of je erbij bent via WhatsApp?"
     };
 
-    // Render content
-    document.getElementById("titleTop").textContent = INVITE.brand.titleTop;
-    document.getElementById("headline").textContent = INVITE.brand.headline;
-    document.getElementById("subtitle").textContent = INVITE.brand.subtitle;
+    // Render
+    document.getElementById("headline").textContent = INVITE.name;
+    document.getElementById("ageText").textContent = INVITE.age;
+    document.getElementById("dateValue").textContent = INVITE.dateValue;
+    document.getElementById("timeValue").textContent = INVITE.timeValue;
+    document.getElementById("locationValue").textContent = INVITE.locationValue;
+    document.getElementById("fineText").textContent = INVITE.fine;
 
-    document.getElementById("dateLabel").textContent = INVITE.event.dateLabel;
-    document.getElementById("dateValue").textContent = INVITE.event.dateValue;
-    document.getElementById("timeLabel").textContent = INVITE.event.timeLabel;
-    document.getElementById("timeValue").textContent = INVITE.event.timeValue;
-    document.getElementById("locationLabel").textContent = INVITE.event.locationLabel;
-    document.getElementById("locationValue").textContent = INVITE.event.locationValue;
+    // Maps
+    document.getElementById("btnMaps").href =
+      "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(INVITE.locationValue);
 
-    document.getElementById("btnCalendar").textContent = "📅 " + INVITE.buttons.calendar;
-    document.getElementById("btnMaps").textContent = "📍 " + INVITE.buttons.maps;
-
-    // Maps link (Google Maps query)
-    const mapsQuery = encodeURIComponent(INVITE.event.locationValue);
-    document.getElementById("btnMaps").href = "https://www.google.com/maps/search/?api=1&query=" + mapsQuery;
-
-    // WhatsApp links
+    // WhatsApp
     function waLink(message){
-      const number = INVITE.whatsapp.phoneE164.replace(/\D/g, ""); // 316...
+      const number = INVITE.whatsappPhone.replace(/\D/g, "");
       return "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
     }
-
-    const baseMsg =
-      `${INVITE.brand.headline} • ${INVITE.event.dateValue} om ${INVITE.event.timeValue} • ${INVITE.event.locationValue}\n\n`;
-
-    document.getElementById("btnYes").textContent = "💬 " + INVITE.whatsapp.yesText;
-    document.getElementById("btnNo").textContent  = "💬 " + INVITE.whatsapp.noText;
-
+    const baseMsg = `${INVITE.name} ${INVITE.age} • ${INVITE.dateValue} om ${INVITE.timeValue} • ${INVITE.locationValue}\n\n`;
     document.getElementById("btnYes").href = waLink(baseMsg + "Ik kom ✅");
     document.getElementById("btnNo").href  = waLink(baseMsg + "Ik kom niet ❌");
 
-    // Calendar (.ics download)
+    // Calendar (.ics)
     function pad(n){ return String(n).padStart(2,"0"); }
-
-    // Event: 2026-02-07 13:00 (floating local time)
     const start = { y: 2026, m: 2, d: 7, hh: 13, mm: 0 };
-    const end   = { y: 2026, m: 2, d: 7, hh: 16, mm: 0 }; // default 3 hours
+    const end   = { y: 2026, m: 2, d: 7, hh: 16, mm: 0 };
 
     function toICSDate(dt){
       return `${dt.y}${pad(dt.m)}${pad(dt.d)}T${pad(dt.hh)}${pad(dt.mm)}00`;
@@ -533,9 +405,9 @@ UID:${uid}
 DTSTAMP:${dtstampStr}
 DTSTART:${toICSDate(start)}
 DTEND:${toICSDate(end)}
-SUMMARY:${INVITE.brand.headline}
-LOCATION:${INVITE.event.locationValue}
-DESCRIPTION:${INVITE.brand.titleTop}
+SUMMARY:${INVITE.name} ${INVITE.age}
+LOCATION:${INVITE.locationValue}
+DESCRIPTION:${INVITE.titleTop}
 END:VEVENT
 END:VCALENDAR`;
 
