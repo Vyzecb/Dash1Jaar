@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uitnodiging • Dash 1 Jaar</title>
+  <meta name="description" content="Luxe verjaardagsuitnodiging • Dash 1 Jaar • 7 februari 2026 • 13:00 • Jol 37-29, Lelystad" />
+  <style>
+    :root{
+      --bg0:#07070b;
+      --bg1:#0b0b12;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --text:#f6f2ea;
+      --muted: rgba(246,242,234,.74);
+      --gold1:#f7e7a2;
+      --gold2:#d6b25f;
+      --red:#b7121b;
+      --black:#0b0b0f;
+      --shadow: 0 28px 80px rgba(0,0,0,.55);
+      --radius: 26px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(183,18,27,.22), transparent 55%),
+        radial-gradient(900px 520px at 85% 20%, rgba(214,178,95,.18), transparent 55%),
+        radial-gradient(900px 520px at 45% 85%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:34px 18px;
+      position:relative;
+    }
+
+    /* Subtle “gold confetti” */
+    .confetti{
+      position:absolute; inset:0;
+      pointer-events:none;
+      opacity:.45;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(247,231,162,.85) 0 2px, transparent 3px),
+        radial-gradient(circle at 22% 68%, rgba(214,178,95,.75) 0 1.6px, transparent 3px),
+        radial-gradient(circle at 78% 22%, rgba(247,231,162,.75) 0 1.8px, transparent 3px),
+        radial-gradient(circle at 86% 62%, rgba(214,178,95,.8) 0 2.2px, transparent 3px),
+        radial-gradient(circle at 55% 40%, rgba(247,231,162,.55) 0 1.4px, transparent 3px),
+        radial-gradient(circle at 35% 30%, rgba(214,178,95,.55) 0 1.2px, transparent 3px);
+      filter: blur(.2px);
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform: translateY(0px)}
+      50%{transform: translateY(-10px)}
+    }
+
+    .card{
+      width:min(880px, 100%);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Gold rim */
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: conic-gradient(from 210deg,
+        rgba(247,231,162,.25),
+        rgba(214,178,95,.75),
+        rgba(247,231,162,.20),
+        rgba(214,178,95,.55),
+        rgba(247,231,162,.25)
+      );
+      filter: blur(10px);
+      opacity:.35;
+      z-index:0;
+    }
+
+    .inner{
+      position:relative;
+      z-index:1;
+      padding: 34px;
+    }
+
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
+    }
+
+    .tag .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(180deg, var(--gold1), var(--gold2));
+      box-shadow: 0 0 0 4px rgba(214,178,95,.18);
+    }
+
+    .script{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-style: italic;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color: var(--gold1);
+      text-shadow: 0 8px 30px rgba(214,178,95,.20);
+    }
+
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items:center;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr}
+    }
+
+    .headline{
+      margin:0;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.03;
+      letter-spacing: -1px;
+    }
+
+    .sub{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 56ch;
+    }
+
+    /* “Mouse ears” emblem (generic) */
+    .emblem{
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      background:
+        radial-gradient(120px 120px at 30% 30%, rgba(183,18,27,.45), transparent 60%),
+        radial-gradient(140px 140px at 75% 20%, rgba(214,178,95,.30), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.25));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 24px 70px rgba(0,0,0,.55);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .ears{
+      position:absolute; inset:0;
+      display:grid;
+      place-items:center;
+      transform: translateY(-6px);
+    }
+    .ear-wrap{
+      width: 64%;
+      height: 64%;
+      position:relative;
+      reminding: none;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
+    }
+    .ear{
+      position:absolute;
+      width: 42%;
+      height: 42%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.10), rgba(0,0,0,.85));
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .ear.left{left:0; top:0}
+    .ear.right{right:0; top:0}
+    .head{
+      position:absolute;
+      left:50%; top:54%;
+      transform: translate(-50%,-50%);
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.12), rgba(0,0,0,.88));
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .gold-stamp{
+      position:absolute;
+      left:50%; bottom:18px;
+      transform: translateX(-50%);
+      padding:10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing:.6px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(10,10,14,.92);
+      background: linear-gradient(180deg, var(--gold1), var(--gold2));
+      box-shadow: 0 16px 45px rgba(214,178,95,.25);
+    }
+
+    /* Satin balloons (CSS) */
+    .balloons{
+      position:absolute;
+      right:-40px; top:-30px;
+      width: 320px;
+      height: 260px;
+      pointer-events:none;
+      opacity:.95;
+      filter: drop-shadow(0 22px 55px rgba(0,0,0,.55));
+    }
+    .balloon{
+      position:absolute;
+      width: 98px; height: 118px;
+      border-radius: 50% 50% 48% 48%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), rgba(255,255,255,0) 38%),
+                  linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.18));
+      border:1px solid rgba(255,255,255,.12);
+      transform: rotate(-6deg);
+    }
+    .balloon.red{
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), rgba(255,255,255,0) 38%),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(0,0,0,.22)),
+        radial-gradient(circle at 60% 65%, rgba(0,0,0,.20), rgba(0,0,0,0) 55%),
+        linear-gradient(180deg, rgba(183,18,27,.95), rgba(120,8,12,.95));
+    }
+    .balloon.black{
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.22), rgba(255,255,255,0) 38%),
+        radial-gradient(circle at 60% 65%, rgba(255,255,255,.08), rgba(255,255,255,0) 55%),
+        linear-gradient(180deg, rgba(20,20,28,.98), rgba(6,6,10,.98));
+    }
+    .balloon:nth-child(1){right:120px; top:55px; transform: rotate(10deg) scale(1.0)}
+    .balloon:nth-child(2){right:50px; top:20px; transform: rotate(-6deg) scale(1.05)}
+    .balloon:nth-child(3){right:10px; top:92px; transform: rotate(8deg) scale(.95)}
+    .balloon::after{
+      content:"";
+      position:absolute;
+      left:50%; bottom:-10px;
+      width: 14px; height: 14px;
+      transform: translateX(-50%) rotate(45deg);
+      border-radius: 2px;
+      background: inherit;
+      filter: brightness(.85);
+    }
+    .string{
+      position:absolute;
+      left:50%; bottom:-120px;
+      width:2px; height:120px;
+      background: linear-gradient(180deg, rgba(214,178,95,.0), rgba(214,178,95,.55));
+      transform: translateX(-50%);
+      border-radius:999px;
+      opacity:.9;
+    }
+
+    .info{
+      margin-top: 24px;
+      padding: 18px 18px;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .divider{
+      height:1px;
+      margin: 14px 0 16px;
+      background: linear-gradient(90deg, rgba(214,178,95,.0), rgba(214,178,95,.70), rgba(214,178,95,.0));
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (max-width: 700px){
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .item{
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .label{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(247,231,162,.85);
+      margin:0 0 6px;
+    }
+    .value{
+      margin:0;
+      font-size: 16px;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .note{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+    .btn{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 650;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22)}
+    .btn.primary{
+      border: none;
+      color: rgba(10,10,14,.95);
+      background: linear-gradient(180deg, var(--gold1), var(--gold2));
+      box-shadow: 0 18px 55px rgba(214,178,95,.22);
+    }
+    .btn.primary:hover{background: linear-gradient(180deg, #fff1b8, #cda64d)}
+
+    .footer{
+      margin-top: 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color: rgba(246,242,234,.55);
+      font-size: 12px;
+    }
+
+    .sr{position:absolute; left:-9999px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="confetti" aria-hidden="true"></div>
+
+    <main class="card" role="main" aria-label="Verjaardagsuitnodiging">
+      <div class="balloons" aria-hidden="true">
+        <div class="balloon red"><div class="string"></div></div>
+        <div class="balloon black"><div class="string"></div></div>
+        <div class="balloon red"><div class="string"></div></div>
+      </div>
+
+      <div class="inner">
+        <div class="top">
+          <div class="tag">
+            <div class="dot"></div>
+            <div class="script" id="titleTop">Je bent uitgenodigd!</div>
+          </div>
+          <div class="tag">
+            <span style="color:rgba(246,242,234,.75); font-size:13px; letter-spacing:.08em; text-transform:uppercase;">
+              Luxe kinderfeest • Mouse Ears Theme
+            </span>
+          </div>
+        </div>
+
+        <section class="hero">
+          <div>
+            <h1 class="headline" id="headline">Dash 1 Jaar</h1>
+            <p class="sub" id="subtitle">
+              Kom samen met ons vieren! Een stijlvolle, warme uitnodiging met een luxe rood-zwart-gouden vibe.
+            </p>
+
+            <div class="info" aria-label="Feestdetails">
+              <div class="divider" aria-hidden="true"></div>
+
+              <div class="grid">
+                <div class="item">
+                  <p class="label" id="dateLabel">Datum</p>
+                  <p class="value" id="dateValue">7 februari 2026</p>
+                </div>
+                <div class="item">
+                  <p class="label" id="timeLabel">Aanvang</p>
+                  <p class="value" id="timeValue">13:00 uur</p>
+                </div>
+                <div class="item">
+                  <p class="label" id="locationLabel">Locatie</p>
+                  <p class="value" id="locationValue">Jol 37-29, Lelystad</p>
+                </div>
+              </div>
+
+              <div class="note">
+                <span id="noteText">Geen dresscode • Geen jubileum-vermelding</span>
+                <span style="color:rgba(247,231,162,.75)">✨</span>
+              </div>
+
+              <div class="actions">
+                <button class="btn primary" id="btnCalendar" type="button">📅 Zet in je agenda</button>
+                <a class="btn" id="btnMaps" href="#" target="_blank" rel="noreferrer">📍 Route openen</a>
+              </div>
+            </div>
+
+            <div class="footer">
+              <span>Tip: print op dik papier (mat of soft-touch) voor extra luxe.</span>
+              <span id="footDate"></span>
+            </div>
+          </div>
+
+          <aside class="emblem" aria-label="Thema embleem">
+            <div class="ears">
+              <div class="ear-wrap">
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+                <div class="head"></div>
+              </div>
+            </div>
+            <div class="gold-stamp">VIP INVITE</div>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // ====== Edit this JSON to change the website content ======
+    const INVITE = {
+      brand: {
+        titleTop: "Je bent uitgenodigd!",
+        headline: "Dash 1 Jaar",
+        subtitle: "Kom samen met ons vieren! Een stijlvolle, warme uitnodiging met een luxe rood-zwart-gouden vibe."
+      },
+      event: {
+        dateLabel: "Datum",
+        dateValue: "7 februari 2026",
+        timeLabel: "Aanvang",
+        timeValue: "13:00 uur",
+        locationLabel: "Locatie",
+        locationValue: "Jol 37-29, Lelystad"
+      },
+      details: {
+        note: "Geen dresscode • Geen jubileum-vermelding",
+        ctaPrimary: "Zet in je agenda",
+        ctaSecondary: "Route openen"
+      }
+    };
+
+    // Render content
+    document.getElementById("titleTop").textContent = INVITE.brand.titleTop;
+    document.getElementById("headline").textContent = INVITE.brand.headline;
+    document.getElementById("subtitle").textContent = INVITE.brand.subtitle;
+
+    document.getElementById("dateLabel").textContent = INVITE.event.dateLabel;
+    document.getElementById("dateValue").textContent = INVITE.event.dateValue;
+    document.getElementById("timeLabel").textContent = INVITE.event.timeLabel;
+    document.getElementById("timeValue").textContent = INVITE.event.timeValue;
+    document.getElementById("locationLabel").textContent = INVITE.event.locationLabel;
+    document.getElementById("locationValue").textContent = INVITE.event.locationValue;
+
+    document.getElementById("noteText").textContent = INVITE.details.note;
+    document.getElementById("btnCalendar").textContent = "📅 " + INVITE.details.ctaPrimary;
+    document.getElementById("btnMaps").textContent = "📍 " + INVITE.details.ctaSecondary;
+
+    // Maps link (Google Maps query)
+    const mapsQuery = encodeURIComponent(INVITE.event.locationValue);
+    document.getElementById("btnMaps").href = "https://www.google.com/maps/search/?api=1&query=" + mapsQuery;
+
+    // Calendar (.ics download)
+    function pad(n){ return String(n).padStart(2,"0"); }
+
+    // Event: 2026-02-07 13:00 Europe/Amsterdam (no timezone conversion here; it's a simple local-time ICS)
+    const start = { y: 2026, m: 2, d: 7, hh: 13, mm: 0 };
+    const end   = { y: 2026, m: 2, d: 7, hh: 16, mm: 0 }; // default 3 hours
+
+    function toICSDate(dt){
+      // Floating time (no Z). Many calendar apps interpret it as local time.
+      return `${dt.y}${pad(dt.m)}${pad(dt.d)}T${pad(dt.hh)}${pad(dt.mm)}00`;
+    }
+
+    function downloadICS(){
+      const uid = `dash-1jaar-${Date.now()}@invite.local`;
+      const dtstamp = new Date();
+      const dtstampStr =
+        dtstamp.getUTCFullYear().toString() +
+        pad(dtstamp.getUTCMonth()+1) +
+        pad(dtstamp.getUTCDate()) + "T" +
+        pad(dtstamp.getUTCHours()) +
+        pad(dtstamp.getUTCMinutes()) +
+        pad(dtstamp.getUTCSeconds()) + "Z";
+
+      const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Dash Invite//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:${uid}
+DTSTAMP:${dtstampStr}
+DTSTART:${toICSDate(start)}
+DTEND:${toICSDate(end)}
+SUMMARY:${INVITE.brand.headline}
+LOCATION:${INVITE.event.locationValue}
+DESCRIPTION:${INVITE.brand.titleTop} - ${INVITE.details.note}
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob = new Blob([ics], {type: "text/calendar;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Dash-1jaar-uitnodiging.ics";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url), 1000);
+    }
+
+    document.getElementById("btnCalendar").addEventListener("click", downloadICS);
+
+    // Footer date
+    document.getElementById("footDate").textContent = "© " + new Date().getFullYear();
+  </script>
+</body>
+</html>
